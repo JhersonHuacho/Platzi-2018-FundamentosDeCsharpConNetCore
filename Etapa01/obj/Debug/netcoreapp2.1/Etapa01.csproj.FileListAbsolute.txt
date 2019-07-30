@@ -1,0 +1,11 @@
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\bin\Debug\netcoreapp2.1\Etapa01.deps.json
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\bin\Debug\netcoreapp2.1\Etapa01.runtimeconfig.json
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\bin\Debug\netcoreapp2.1\Etapa01.runtimeconfig.dev.json
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\bin\Debug\netcoreapp2.1\Etapa01.dll
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\bin\Debug\netcoreapp2.1\Etapa01.pdb
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\obj\Debug\netcoreapp2.1\Etapa01.csprojAssemblyReference.cache
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\obj\Debug\netcoreapp2.1\Etapa01.csproj.CoreCompileInputs.cache
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\obj\Debug\netcoreapp2.1\Etapa01.AssemblyInfoInputs.cache
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\obj\Debug\netcoreapp2.1\Etapa01.AssemblyInfo.cs
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\obj\Debug\netcoreapp2.1\Etapa01.dll
+E:\repositorio\Platzi-2018-FundamentosDeCsharpConNetCore\Etapa01\obj\Debug\netcoreapp2.1\Etapa01.pdb
