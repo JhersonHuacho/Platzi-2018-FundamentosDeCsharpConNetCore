@@ -18,12 +18,20 @@ namespace CoreEscuela.Entidades
             Nombre = nombre;
             AnioDeCreacion = anio;
         }
+        public Escuela(string nombre, int anio, TiposEscuela tipos, string pais = "", string ciudad = "")
+        {
+            (Nombre, AnioDeCreacion) = (nombre, anio);
+            Pais = pais;
+            Ciudad = ciudad;
+        }
         // El constructor lo podemos escribir de una manera mas corta.
         // Mediante igualación por tuplas. Que es una caracteristica muy comun en los lenaguajes funcionales.
         public Escuela(string nombre, int anio, string pais) => (Nombre, AnioDeCreacion, Pais) = (nombre, anio, pais);
+
         public override string ToString()
         {
-            return $"Nombre: {Nombre}, Tipo: {TipoEscuela} \nPais: {Pais}, Ciudad: {Ciudad}";
+            // return $"Nombre: {Nombre}, Tipo: {TipoEscuela} \nPais: {Pais}, Ciudad: {Ciudad}";
+            return $"Nombre: \"{Nombre}\", Tipo: {TipoEscuela} {System.Environment.NewLine} Pais: {Pais}, Ciudad: {Ciudad}";
         }
     }
 }
