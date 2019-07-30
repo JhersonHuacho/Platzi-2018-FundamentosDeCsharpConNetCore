@@ -10,7 +10,9 @@ namespace Etapa01
             var escuela = new Escuela("Huacho Acadamy", 2012);
             escuela.Pais = "Perú";
             escuela.Ciudad = "Iquitos";
-            Console.WriteLine(escuela.Nombre);
+            escuela.TipoEscuela = TiposEscuela.Primaria;
+
+            Console.WriteLine(escuela);
         }
     }
 }
