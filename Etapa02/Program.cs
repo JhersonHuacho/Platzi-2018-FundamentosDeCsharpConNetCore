@@ -1,5 +1,6 @@
 ﻿using System;
 using CoreEscuela.Entidades;
+using static System.Console;
 
 namespace Etapa01
 {
@@ -11,26 +12,32 @@ namespace Etapa01
                 ciudad: "Loreto", pais: "Perú");
             escuela.Pais = "Perú";
             escuela.Ciudad = "Iquitos";
-
-            var arregloCursos = new Curso[3];
-
-            arregloCursos[0] = new Curso()
+            escuela.Cursos = new Curso[]
             {
-                Nombre = "101"
+                new Curso() { Nombre = "101" },
+                new Curso() { Nombre = "201" },
+                new Curso { Nombre = "301" }
             };
 
-            var curso2 = new Curso()
+            var arregloCursos = new Curso[3]
             {
-                Nombre = "201"
+                new Curso() { Nombre = "101" },
+                new Curso() { Nombre = "201" },
+                new Curso { Nombre = "301" }
             };
-            arregloCursos[1] = curso2;
 
-            arregloCursos[2] = new Curso
+            Curso[] arregloCursosDos =
             {
-                Nombre = "301"
+                new Curso() { Nombre = "101" },
+                new Curso() { Nombre = "201" },
+                new Curso { Nombre = "301" }
             };
+
 
             Console.WriteLine(escuela);
+            ImprimirCursosEscuela(escuela);
+
+            System.Console.WriteLine("");
             System.Console.WriteLine("========= Imprimir Usando While ============");
             ImprimirCursosUsandoWhile(arregloCursos);
             System.Console.WriteLine("========= Imprimir Usando Do While =========");
@@ -39,6 +46,30 @@ namespace Etapa01
             ImprimirCursosUsandoFor(arregloCursos);
             System.Console.WriteLine("========= Imprimir Usando ForEach ==========");
             ImprimirCursosUsandoForEach(arregloCursos);
+        }
+
+        private static void ImprimirCursosEscuela(Escuela escuela)
+        {
+            WriteLine("====================");
+            WriteLine("Cursos de la Escuela");
+            WriteLine("====================");
+
+            // if (escuela != null && escuela.Cursos != null)
+            // {
+            //     foreach (var curso in escuela.Cursos)
+            //     {
+            //         WriteLine($"Nombre {curso.Nombre}, Id {curso.UniqueId}");
+            //     }
+            // }
+
+            // una forma mas corta de evaluar si es null, y acorde a las nuevas versiones de C#.
+            if (escuela?.Cursos != null)
+            {
+                foreach (var curso in escuela.Cursos)
+                {
+                    WriteLine($"Nombre {curso.Nombre}, Id {curso.UniqueId}");
+                }
+            }
         }
 
         private static void ImprimirCursosUsandoWhile(Curso[] arregloCursos)
@@ -74,5 +105,6 @@ namespace Etapa01
                 Console.WriteLine($"Nombre {curso.Nombre}, Id {curso.UniqueId}");
             }
         }
+
     }
 }
