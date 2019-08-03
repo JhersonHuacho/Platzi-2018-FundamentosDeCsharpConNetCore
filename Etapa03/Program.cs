@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CoreEscuela.Entidades;
 using static System.Console;
 
@@ -46,8 +47,43 @@ namespace Etapa01
             ImprimirCursosUsandoFor(arregloCursos);
             System.Console.WriteLine("========= Imprimir Usando ForEach ==========");
             ImprimirCursosUsandoForEach(arregloCursos);
-        }
 
+            /** LISTAS */
+            System.Console.WriteLine("========= Usando Listas ==========");
+            escuela.CursosList = new List<Curso>()
+            {
+                new Curso() { Nombre = "101", Jornada = TiposJornada.Maniana },
+                new Curso() { Nombre = "201", Jornada = TiposJornada.Maniana },
+                new Curso { Nombre = "301", Jornada = TiposJornada.Maniana }
+            };
+            escuela.CursosList.Add(new Curso { Nombre = "102", Jornada = TiposJornada.Tarde });
+            escuela.CursosList.Add(new Curso { Nombre = "202", Jornada = TiposJornada.Tarde });
+            var otraColeccion = new List<Curso>()
+            {
+                new Curso { Nombre = "401", Jornada = TiposJornada.Maniana },
+                new Curso { Nombre = "501", Jornada = TiposJornada.Maniana },
+                new Curso { Nombre = "502", Jornada = TiposJornada.Tarde }
+            };
+            escuela.CursosList.AddRange(otraColeccion);
+
+            ImprimirCursosEscuelaUsandoList(escuela);
+            otraColeccion.Clear();
+            ImprimirCursosEscuelaUsandoList(escuela);
+        }
+        private static void ImprimirCursosEscuelaUsandoList(Escuela escuela)
+        {
+            WriteLine("====================");
+            WriteLine("Cursos de la Escuela");
+            WriteLine("====================");
+
+            if (escuela?.Cursos != null)
+            {
+                foreach (var curso in escuela.CursosList)
+                {
+                    WriteLine($"Nombre {curso.Nombre}, Id {curso.UniqueId}");
+                }
+            }
+        }
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
             WriteLine("====================");
