@@ -69,6 +69,24 @@ namespace Etapa01
             ImprimirCursosEscuelaUsandoList(escuela);
             otraColeccion.Clear();
             ImprimirCursosEscuelaUsandoList(escuela);
+
+            WriteLine("= Removiendo y buscando objetos en colecciones =");
+            Curso tmp = new Curso { Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
+            escuela.CursosList.Add(tmp);
+            ImprimirCursosEscuelaUsandoList(escuela);
+            WriteLine("Curso.Hash " + tmp.GetHashCode());
+            escuela.CursosList.Remove(tmp);
+            ImprimirCursosEscuelaUsandoList(escuela);
+            // una forma.
+            Predicate<Curso> miAlgoritmo = Predicado;
+            escuela.CursosList.RemoveAll(miAlgoritmo);
+            // segunda forma, directo.
+            escuela.CursosList.RemoveAll(Predicado);
+        }
+
+        private static bool Predicado(Curso curobj)
+        {
+            return curobj.Nombre == "301";
         }
         private static void ImprimirCursosEscuelaUsandoList(Escuela escuela)
         {
