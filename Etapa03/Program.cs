@@ -82,6 +82,19 @@ namespace Etapa01
             escuela.CursosList.RemoveAll(miAlgoritmo);
             // segunda forma, directo.
             escuela.CursosList.RemoveAll(Predicado);
+
+
+            /* Expresiones Lambda y delegados */
+            // delegados
+            escuela.CursosList.RemoveAll(delegate (Curso curobj)
+            {
+                return curobj.Nombre == "301";
+            });
+            // usando expresiones lambda
+            escuela.CursosList.RemoveAll((Curso cur) => cur.Nombre == "301");
+            // usando expresiones lambda
+            //escuela.CursosList.RemoveAll((cur) => cur.Nombre == "301");
+            escuela.CursosList.RemoveAll((cur) => cur.Nombre == "501" && cur.Jornada == TiposJornada.Maniana);
         }
 
         private static bool Predicado(Curso curobj)
