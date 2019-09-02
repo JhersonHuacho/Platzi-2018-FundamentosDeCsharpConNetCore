@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using CoreEscuela.Entidades;
 using static System.Console;
 
-namespace Etapa01
+namespace CoreEscuela
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            var engine = new EscuelaEngine();
+            engine.Inicializar();
+
+            ImprimirCursosEscuelaUsandoList(engine.Escuela);
+
+            ReadLine();
+        }
+
+        private static void Etapa03()
         {
             var escuela = new Escuela("Huacho Acadamy", 2012, TiposEscuela.Primaria,
                 ciudad: "Loreto", pais: "Perú");
@@ -96,7 +106,6 @@ namespace Etapa01
             //escuela.CursosList.RemoveAll((cur) => cur.Nombre == "301");
             escuela.CursosList.RemoveAll((cur) => cur.Nombre == "501" && cur.Jornada == TiposJornada.Maniana);
         }
-
         private static bool Predicado(Curso curobj)
         {
             return curobj.Nombre == "301";
@@ -107,7 +116,7 @@ namespace Etapa01
             WriteLine("Cursos de la Escuela");
             WriteLine("====================");
 
-            if (escuela?.Cursos != null)
+            if (escuela?.CursosList != null)
             {
                 foreach (var curso in escuela.CursosList)
                 {
