@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CoreEscuela.Entidades;
+using CoreEscuela.Util;
 using static System.Console;
 
 namespace CoreEscuela
@@ -12,8 +13,9 @@ namespace CoreEscuela
             var engine = new EscuelaEngine();
             engine.Inicializar();
 
+            Printer.WriteTitle("BIENVENIDO A LA ESCUELA");
+            Printer.Pitido();
             ImprimirCursosEscuelaUsandoList(engine.Escuela);
-
             ReadLine();
         }
 
@@ -112,9 +114,7 @@ namespace CoreEscuela
         }
         private static void ImprimirCursosEscuelaUsandoList(Escuela escuela)
         {
-            WriteLine("====================");
-            WriteLine("Cursos de la Escuela");
-            WriteLine("====================");
+            Printer.WriteTitle("Cursos de la Escuela");
 
             if (escuela?.CursosList != null)
             {
